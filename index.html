@@ -18,13 +18,19 @@
 		}
 		button{
 			background:yellow;
-			padding: 5px;
-		}
-        .onePlayerButton{
             font-size: 4em;
             margin-top: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 40px;			
+		}
+        #helpButton{
+            background: cyan;
+            font-size: 4em;
+            margin-top: 10px;
         }
+        #gameButton{
+            background: cyan;
+            font-size: 4em;
+		}
         #helpButton{
             background: cyan;
             font-size: 4em;
@@ -37,20 +43,20 @@
 		}
 	</style>
 </head>
-<body>
-        <h1>Number Guessing Game</h1>
+<body>       
+	<h1>Number Guessing Game</h1>
         <h3>Made By: Satvik Agarwal</h3>
         <h3>Updated By: Shaurya Agrawal</h3>
-        <button onclick='single()' class = "onePlayerButton" >
-            One Player
-        </button><br>
-        <button onclick='multi()' class = "onePlayerButton" >
-            Multi Player
-        </button><br>
-        <h4>For knowing the rules and features of the game, first inspect and check the console, or click on the help button below.</h4>
-        <button id = 'helpButton' > <a href = "help.html" id = "help-link" > Help </a> </button>
+        <button id="gameButton" onclick="button()" >Play</button>
+        <h4 id="helpH4" >For knowing the rules and features of the game, click on the help button below.</h4>
+       <button id = 'helpButton' > <a href = "help.html" id = "help-link" > Help </a> </button>
     <script>
-        function single() {
+        
+function button() {
+    var code = document.querySelector("#gameButton");
+    code.outerHTML = "<button onclick='single()'  >One Player</button><br><button onclick='multi()'  >Multi Player</button><br>";
+}
+function single() {
     var name = prompt('What is your name?')
     var number = Math.floor(Math.random() * 100);
 
